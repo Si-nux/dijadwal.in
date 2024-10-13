@@ -1,0 +1,772 @@
+/* General Styles */
+body {
+    font-family: 'montserrat', sans-serif;
+    margin-left: 90px;
+    margin-top: 90px;
+    background: whitesmoke;
+    color: black;
+}
+
+.white-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.Daily-card {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+
+.date {
+    font-size: 16px;
+    text-align: center;
+}
+
+.welcome-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Monsert, sans-serif;
+    position: absolute;
+    top: 255px;
+    left: 100px;
+    display: flex;
+    border: 1px solid #e0e0e0;
+    align-items: center;
+}
+
+.welcome-image {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+}
+
+.welcome-text {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.welcome-text h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.welcome-text p {
+    font-size: 10px;
+    color: #666;
+}
+
+.welcome-image {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-left: 1px;
+}
+
+.divider {
+    height: 50px;
+    width: 1px;
+    background-color: rgba(76, 91, 106, 0.5);
+    color: rgba(76, 91, 106, 0.5);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.standup-title {
+    position: fixed;
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 1rem 0rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    margin-left: -90px;
+    box-shadow: -1px 8px 20px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Teks di tengah navbar */
+.navbar .center-text {
+    flex: 200;
+    position: absolute;
+    margin-left: 550px;
+    font-size: 18px;
+    color: #333;
+    font-weight: medium;
+}
+
+.highlight {
+    color: #1F64FF; 
+    font-weight: bold; 
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin-left: 200px;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin-left: 9px; /* Kurangi jarak antar item di navbar */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1F64FF;
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    color: #1F64FF;
+    font-weight: bold;
+}
+
+nav ul li a.log-out {
+    background-color: #F3F5F9;
+    color: #61615f;
+    border: 1px solid #1F64FF; 
+    margin-right: 70px;
+}
+
+.menu-heading {
+    font-size: 16px;
+}
+
+.sidebar {
+    width: 200px;
+    padding: 2rem;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    color: #3a3a39;
+    height: 100vh; /* Full height */
+    position: fixed; /* Stay in place */
+    top: 12%; /* Align dengan navbar */
+    left: -200px; /* Start off-screen */
+    z-index: 1; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 300ms ease-in-out;
+}
+
+.sidebar.mini {
+    width: 60px; /* Sidebar kecil */
+    left: 0;
+    padding: 1rem;
+}
+
+.menu-heading {
+    font-size: 36px;
+}
+.sidebar h2 {
+    margin-top: 30px; 
+    margin-bottom: 20px;
+    margin-left: 25px;
+}
+
+.sidebar.mini h2 {
+    display: none; /* Sembunyikan judul saat mini */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 8px;
+    margin-top: 30px;
+}
+
+.sidebar ul li {
+    margin: 1rem 0;
+    margin-left: 8px;
+    margin-top: 10px;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    font-size: 20px;
+    color: #3a3a39;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background 0.3s, width 0.3s;
+}
+
+.sidebar ul li a img {
+    width: 16px;
+    height: 16px;
+    margin-right: 24px;
+}
+
+.sidebar.mini ul li a .menu-text {
+    display: none; /* Sembunyikan teks saat mini */
+}
+
+.sidebar ul li a:hover {
+    background-color: #EEF4FB;
+    color: #1F64FF;
+}
+
+.sidebar ul .submenu {
+    display: none; /* Hide submenu by default */
+    padding-left: 10px; 
+}
+
+.sidebar ul li:hover .submenu {
+    display: block; /* Show submenu on hover */
+}
+
+.sidebar.active {
+    left: 0; 
+}
+
+.sidebar.mini .submenu {
+    display: none; /* Sembunyikan submenu di mini mode */
+}
+
+.sidebar .toggle-btn {
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.sidebar .toggle-btn span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #111;
+    transition: all 300ms ease-in-out;
+}
+
+.sidebar .toggle-btn span:nth-child(1) { 
+    top: 10%;
+}
+
+.sidebar .toggle-btn span:nth-child(2) { 
+    top: 49%;
+}
+
+.sidebar .toggle-btn span:nth-child(3) { 
+    top: 90%;
+}
+
+.sidebar.active .toggle-btn span:nth-child(1){ 
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.sidebar.active .toggle-btn span:nth-child(2){ 
+    display: none;
+}
+
+.sidebar.active .toggle-btn span:nth-child(3){ 
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+#calendar {
+    background-color: white;
+    color: black;
+    padding: 40px;
+    border-radius: 10px;
+    position: relative; /* Untuk menjaga konten di atas */
+    z-index: 2; /* Kalender di bawah greeting card */
+}
+
+/* Change body background to white */
+body {
+    background-color: F3F5F9;
+    color: black;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: #FFFFFF; /* light gray */
+    color: black;
+}
+
+.main-container {
+    position: relative; /* Agar anak-anaknya bisa diposisikan relatif */
+    margin-top: 20px; /* Jarak dari navbar jika ada */
+}
+
+.greeting-card {
+     background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'montserrat', sans-serif;
+    position: absolute; 
+    top: 420px;
+    left: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.greeting-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 25px;
+    color: #333;
+}
+
+.time-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.time {
+    font-size: 60px;
+    font-weight: bold;
+    color: #007bff;
+    margin-right: 15px;
+    margin-left: 45px;
+}
+
+.period {
+    font-size: 56px;
+    font-weight: bold;
+    color: #007bff;
+    margin-right: 5px;
+}
+
+#timezone {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+    display: flex;
+}
+
+.additional-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    text-align: center;
+}
+
+.info p {
+    margin-left: 22px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    color: #666;
+    font-size: 14px;
+}
+
+.info-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Task modal styling */
+/* Modal Styling */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.modal-title {
+    text-align: center; 
+    font-size: 24px;    
+    margin-bottom: 20px; 
+}
+
+.modal-content {
+    border-radius: 4px;
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: -60px;
+    margin-right: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+}
+
+/* Task Container Styling */
+.task-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 20px;
+}
+
+/* Task columns */
+.task-column {
+    width: 28%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+/* Task column title styling */
+.task-column h3 {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* Circle before the task title */
+.task-column h3::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 12px;
+}
+
+/* Colored lines under each title */
+.task-column h3::after {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 2px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+/* Colors for each column */
+.task-column:nth-child(1) h3::before {
+    background-color: #5b3cc4; 
+}
+
+.task-column:nth-child(1) h3::after {
+    background-color: #5b3cc4; 
+}
+
+.task-column:nth-child(2) h3::before {
+    background-color: #f9a826; 
+}
+
+.task-column:nth-child(2) h3::after {
+    background-color: #f9a826; 
+}
+
+.task-column:nth-child(3) h3::before {
+    background-color: #66c686; 
+}
+
+.task-column:nth-child(3) h3::after {
+    background-color: #66c686; 
+}
+
+/* Task list styling */
+.task-list {
+    min-height: 200px;
+    border: 1px dashed #ccc;
+    padding: 10px;
+    background-color: #fff;
+}
+
+/* Task item styling */
+.task {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #ffdd99;
+    cursor: move;
+}
+
+/* Priority Colors */
+.low-priority {
+    background-color: #cce5ff; 
+}
+
+.medium-priority {
+    background-color: #ffeb99; 
+}
+
+.high-priority {
+    background-color: #ff9999; 
+}
+
+.label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.value {
+    color: #333;
+}
+
+.task p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task p span.label {
+    font-weight: bold;
+}
+
+.task p span.value {
+    margin-left: 10px;
+}
+
+/* Delete button styling */
+.delete-button {
+    margin-top: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.delete-button:hover {
+    background-color: #ff3333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+}
+
+.dropdown-priority {
+    width: 398px;
+    height: 30px;
+    margin-bottom: 10px; 
+    border-radius: 5px;
+    border: 1px solid #C0C0C0;
+}
+
+input[type="text"], input[type="url"] {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #C0C0C0;
+    width: 95%; 
+    align-self: flex-start;
+}
+
+.meeting-date-time {
+    display: flex;
+    gap: 5rem;
+    margin-bottom: 1rem;
+}
+
+.meeting-date-time div {
+    flex:1; 
+}
+
+input[type="date"], input[type="time"] {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 89%; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 0.5rem; 
+    width: 100%;
+}
+
+button {
+    padding: 12px 39px;
+    font-size: 16px;
+    background-color: #1F64FF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 12px;
+    margin-right: 3rem;
+    margin-left: 1rem;
+}
+
+button:hover {
+    background-color: #3694F3;
+}
+
+.cancel-btn {
+    background-color: #a1a1a1; 
+    color: #ffffff;
+    margin-right: 0;
+}
+
+.cancel-btn:hover {
+    background-color: #D9DADE;
+    color: #65676D;
+}
+
+/* Gaya untuk tombol hapus */
+.delete-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #ff1a1a;
+}
+
+/* Pastikan kalender memiliki tinggi yang sesuai */
+#calendar {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/* Gaya untuk tombol hapus */
+.delete-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #ff1a1a;
+}
+
+/* Pastikan kalender memiliki tinggi yang sesuai */
+#calendar {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/* Gaya untuk "Today's Tasks" */
+#today-tasks {
+    margin-top: 20px;
+}
+
+#today-tasks ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+#today-tasks li {
+    margin-bottom: 5px;
+}
+/* Gaya untuk tombol hapus tugas */
+.delete-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #ff1a1a;
+}
+
+/* Gaya untuk tombol hapus meeting */
+.delete-meeting-button {
+    margin-top: 5px;
+    padding: 4px 15px;
+    background-color: #9e0c0c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-meeting-button:hover {
+    background-color: #cc0000;
+}
+
+/* Pastikan kalender memiliki tinggi yang sesuai */
+#calendar {
+    max-width: 900px;
+    margin-left: 400px;
+    margin-top: 22px;
+}
+
+/* Gaya untuk "Today's Tasks" dan "Today's Meetings" */
+#today-tasks, #today-meetings {
+    margin-top: 20px;
+}
+
+#today-tasks ul, #today-meetings ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+#today-tasks li, #today-meetings li {
+    margin-bottom: 5px;
+}
+
+/* Gaya untuk daftar semua meetings */
+#meetings-list {
+    margin-top: 20px;
+}
+
+.meeting-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}

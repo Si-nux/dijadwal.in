@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Dijadwal.in</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo+icon.png" height="40%" width="40%" alt="Logo" style="margin-left: 50px;margin-right: -110px;">
+            </div>
+              <!-- Teks di tengah navbar -->
+              <div class="center-text">
+                Stay <span class="highlight">Organized</span> To Your <span class="highlight">Task</span>
+            </div>
+            <nav>
+                    <ul>
+                    <li><a href="index.html#about-section">Profile</a></li>
+                    <li><a href="index.html" class="log-out">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="toggle-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h2 class="menu-heading">Menu</h2>
+                    <ul class="submenu">
+                <li>
+                    <a href="#calendar-section" onclick="showSection('calendar-section')">
+                        <img src="iconcalendar.png" alt=" calendar icon" style="width: 18px; height: 19px;"> 
+                         Kalender</span></a></li>
+                <li>
+                    <a href="#project-section" onclick="showSection('project-section')">
+                        <img src="iconproject.png" alt=" Project Icon" style="width: 18px; height: 20px;"> 
+                         Project</a></li>
+                <li>
+                    <a href="#meetings-section" onclick="showSection('meetings-section')">
+                        <img src="iconmeetings.png" alt=" Meetings Icon"style="width: 21px; height: 15px;"> 
+                         Meetings</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">           
+            <section id="calendar-section">
+                <!-- Welcome Card -->
+        <div class="welcome-card">
+            <div class="welcome-text">
+                <h2>Welcome to the Desk, Joko!</h2>
+                <p>Wish this day is your lucky day!</p>
+            </div>
+            <hr class="divider">
+            <img src="fotojoko.png" alt="Joko's Picture" class="welcome-image">
+        </div>
+
+<div class="white-box">
+    <h3 class="Daily-card">Daily Standup</h3>
+    <p class="date">Hello Rangers, Check Your Agenda In Here</p>
+</div>
+
+                <div id="calendar"></div> <!-- Placeholder untuk kalender -->
+                
+                <div class="greeting-card">
+                    <div class="greeting-header">
+                        <span id="greeting-message">Good Morning</span>, it’s currently
+                    </div>
+                    <div class="time-display">
+                        <span id="current-time" class="time">10:14</span>
+                        <span id="current-period" class="period">AM</span>
+                    </div>
+                    <div class="additional-info">
+                        <div class="info">
+                            <p>DAY OF THE WEEK</p>
+                            <p id="day-of-week" class="info-value">4</p>
+                        </div>
+                        <div class="info">
+                            <p>WEEK NUMBER</p>
+                            <p id="week-number" class="info-value">33</p>
+                        </div>
+                    </div>
+                </div>                
+
+                <!-- Today's Tasks -->
+                <div id="today-tasks">
+                    <h3>Today's Tasks</h3>
+                    <ul id="task-list-today"></ul>
+                </div>
+                
+                <!-- Today's Meetings -->
+                <div id="today-meetings">
+                    <h3>Today's Meetings</h3>
+                    <ul id="meeting-list-today"></ul>
+                </div>
+            </section>
+            
+            
+            <section id="project-section">
+                <h2 style="font-size: 36px;margin-left: 20px;">Project</h2>
+                <button id="add-task-button">Add Task</button> <!-- Button to open modal -->
+
+
+            
+               <!-- Task Modal -->
+                    <div id="taskModal" class="modal">
+                        <div class="modal-content">
+                            <h2 class="modal-title">Form Add Task</h2> <!-- Tambahkan judul modal -->
+                            <span class="close">&times;</span>
+                            <form id="modal-task-form">
+                                <label for="modal-task-name" style="font-weight: bold;">Task Name:</label>
+                                <input type="text" id="modal-task-name" required>
+                                
+                                <label for="modal-task-priority" style="font-weight: bold; margin-bottom: 5px;">Priority:</label>
+                                <select id="modal-task-priority" class="dropdown-priority">
+                                    <option value="low">Low</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="high">High</option>
+                                </select>
+
+                                <label for="modal-task-deadline" style="font-weight: bold;">Deadline:</label>
+                                <input type="date" id="modal-task-deadline" required>
+                                <button type="submit">Add Task</button>
+                            </form>
+                        </div>
+                    </div>
+            
+                <!-- Task Columns (To Do, In Progress, Done) -->
+                <div class="task-container">
+                    <div class="task-column">
+                        
+                        <h3>To Do</h3>
+                        <div class="task-list" id="todo-list" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            <!-- Task elements will be appended here -->
+                        </div>
+                    </div>
+                    <div class="task-column">
+                        <h3>In Progress</h3>
+                        <div class="task-list" id="inprogress-list" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            <!-- Task elements will be appended here -->
+                        </div>
+                    </div>
+                    <div class="task-column">
+                        <h3>Done</h3>
+                        <div class="task-list" id="done-list" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            <!-- Task elements will be appended here -->
+                        </div>
+                </div>
+            </section>
+                                    
+            <section id="meetings-section">
+                <h2 style="
+                    font-size: 36px;
+                    margin-left: 10px;
+                ">Meetings</h2>
+                <form id="meeting-form">
+                    <label for="meeting-title">Meeting Title:</label>
+                    <input type="text" id="meeting-title" required>
+            
+                    <label for="meeting-link">Meeting Link:</label>
+                    <input type="url" id="meeting-link" required>
+            
+                    <div class="meeting-date-time">
+                        <div>
+                            <label for="meeting-date">Meeting Date:</label>
+                            <input type="date" id="meeting-date" required>
+                        </div>
+                        <div>
+                            <label for="meeting-time">Meeting Time:</label>
+                            <input type="time" id="meeting-time" required>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button class="cancel-btn" id="cancel-button">Cancel</button>
+                        <button type="submit">Create Meeting</button>
+                </form>
+            </section>
+
+                <div id="meetings-list">
+                    <h3>All Meetings</h3>
+                    <ul id="meeting-list-all"></ul>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+
+    </script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
